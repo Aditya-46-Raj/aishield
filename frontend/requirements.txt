@@ -1,0 +1,11 @@
+streamlit
+requests
+pillow
+opencv-python
+numpy
+facenet-pytorch
+matplotlib
+facenet-pytorch
+lightgbm
+shap
+scipy
