@@ -1,0 +1,52 @@
+# Phase documentation files
+PHASE*.md
+PHASE*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+venv/
+env/
+ENV/
+.venv
+
+# Dataset and training data
+backend/dataset/
+backend/samples/
+
+# Temporary outputs and generated files
+backend/outputs/
+*.jpg
+*.png
+*.mp4
+*_ela_heatmap.png
+
+# Model files (optional - uncomment if you want to track models)
+# backend/models/*.pt
+# backend/models/*.joblib
+
+# Logs
+backend/logs/*.json
+backend/logs/.case_counter
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local

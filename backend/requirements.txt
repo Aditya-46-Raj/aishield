@@ -11,6 +11,5 @@ scikit-learn
 lightgbm
 shap
 facenet-pytorch
-lightgbm
 shap
 scipy

@@ -1,0 +1,5 @@
+id,selfie,label,doc_score,embed_sim,fused,heatmap,doc_expl
+samples/clean_id.jpg,samples/donor.jpg,0,0.005851703956850734,0.07170770317316055,0.44782815586781916,samples\clean_id.jpg_ela_heatmap.png,ELA low: no obvious recompression artifacts detected.
+outputs/forged_demo.jpg,samples/donor.jpg,1,0.11257704248366013,0.0,0.52628852124183,outputs\forged_demo.jpg_ela_heatmap.png,ELA high: large recompression differences; likely tampering or synthetic generation.
+samples/clean_id.jpg,samples/selfie.jpg,0,0.005851703956850734,0.14355364441871643,0.4226820764318746,samples\clean_id.jpg_ela_heatmap.png,ELA low: no obvious recompression artifacts detected.
+outputs/forged_demo.jpg,samples/selfie.jpg,1,0.11257704248366013,0.0,0.52628852124183,outputs\forged_demo.jpg_ela_heatmap.png,ELA high: large recompression differences; likely tampering or synthetic generation.

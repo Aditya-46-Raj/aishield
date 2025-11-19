@@ -1,0 +1,26 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+
+\setmainfont{Times New Roman}
+\onehalfspacing
+
+% Header/footer
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+
+$body$
+
+\end{document}
