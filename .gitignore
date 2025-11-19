@@ -15,7 +15,11 @@ build/
 venv/
 env/
 ENV/
-.venv
+.venv/
+backend/.venv/
+frontend/.venv/
+backend/venv/
+frontend/venv/
 
 # Dataset and training data
 backend/dataset/
