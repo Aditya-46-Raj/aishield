@@ -66,15 +66,25 @@ User → Streamlit UI → FastAPI Backend →
 ```
 aishield/
 ├── backend/
-│   ├── app.py                # FastAPI server
-│   ├── audit_logger.py       # Case logging
-│   ├── dataset/              # Clean/forged IDs
-│   ├── models/               # CNN + Fusion model
-│   └── utils/                # ELA, liveness, embeddings
+│   ├── app.py                # FastAPI server with all endpoints
+│   ├── models.py             # ELA, liveness, embeddings helper functions
+│   ├── audit_logger.py       # Case logging with auto-incrementing case numbers
+│   ├── compliance_config.py  # GDPR/KYC compliance settings
+│   ├── deepfake_detector.py  # FFT-based anti-spoof detection
+│   ├── antispoof_detector.py # Liveness detection with motion analysis
+│   ├── cleanup.py            # Resource cleanup utilities
+│   ├── dataset/              # Training data (clean/forged IDs)
+│   ├── models/               # Trained models (CNN + Fusion LightGBM)
+│   ├── logs/                 # JSON audit logs (generated at runtime)
+│   ├── outputs/              # Temporary processing files
+│   ├── requirements.txt      # Python dependencies
+│   └── Dockerfile            # Container configuration
 ├── frontend/
-│   ├── app.py                # Streamlit UI (User + Admin)
-│   └── requirements.txt
-├── docker-compose.yml        # Optional container setup
+│   ├── app.py                # Streamlit UI (User + Admin modes)
+│   └── requirements.txt      # Frontend dependencies
+├── docker-compose.yml        # Optional container orchestration
+├── start_backend.bat         # Quick start script for backend
+├── start_frontend.bat        # Quick start script for frontend
 └── README.md                 # You are here
 ```
 
@@ -91,20 +101,32 @@ cd aishield
 
 ### **2. Run Backend (FastAPI)**
 
+**Option A: Using startup script (Recommended for Windows)**
+```
+start_backend.bat
+```
+
+**Option B: Manual start**
 ```
 cd backend
 pip install -r requirements.txt
-uvicorn app:app --reload
+python -m uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 Backend runs on: **[http://localhost:8000](http://localhost:8000)**
 
 ### **3. Run Frontend (Streamlit)**
 
+**Option A: Using startup script (Recommended for Windows)**
+```
+start_frontend.bat
+```
+
+**Option B: Manual start**
 ```
 cd frontend
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run app.py --server.port 8501
 ```
 
 Frontend runs on: **[http://localhost:8501](http://localhost:8501)**
@@ -158,21 +180,24 @@ A small README inside the logs folder explains its purpose.
 
 ---
 
-## 🖥️ Screenshots (To Be Added)
+## 🖥️ Screenshots
 
-Add the following before final submission:
+* SHAP Explanation Plot
+![alt text](<Screenshot 2025-11-22 090501.png>)
+
+* Liveness / Deepfake Result
+![alt text](<Screenshot 2025-11-22 113532.png>)
 
 * Document Forgery Heatmap
-* Liveness / Deepfake Result
-* SHAP Explanation Plot
-* Admin Dashboard View
-* Final Combined Result Page
+![alt text](image.png)
 
+* Admin Dashboard View
+![alt text](<Screenshot 2025-11-22 113554.png>)
 ---
 
 ## 📹 Demo Video
 
-Link: **(Add your YouTube video link here)**
+Link:- **[Prototype Demo](https://youtu.be/Q1X40Mtz6UQ)**
 
 ---
 
@@ -194,6 +219,6 @@ This project is built solely for the GHCI 2025 Hackathon (Non‑commercial demon
 
 ## 🤝 Contributors
 
-**Aditya Raj (Team 0AI)** – Design, development, model integration, UI, backend, testing, and architecture.
+**Aditya Raj lead(Team 0AI)** – Design, development, model integration, UI, backend, testing, and architecture.
 
 AIShield represents a complete multi‑modal approach to secure digital onboarding — combining transparency, technical rigor, and practical deployability.
