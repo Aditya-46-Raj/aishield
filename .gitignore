@@ -27,10 +27,6 @@ backend/samples/
 
 # Temporary outputs and generated files
 backend/outputs/
-*.jpg
-*.png
-*.mp4
-*_ela_heatmap.png
 
 # Model files (optional - uncomment if you want to track models)
 # backend/models/*.pt
